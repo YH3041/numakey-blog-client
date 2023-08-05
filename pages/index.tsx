@@ -3,7 +3,7 @@ import SideBar from '@components/sideBar';
 import { IPost } from '@constants/types/types.constants';
 import styled from '@emotion/styled';
 import axios from 'axios';
-import type { GetServerSideProps, GetStaticProps, NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

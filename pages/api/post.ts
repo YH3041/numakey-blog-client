@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 const POST_DATA: IPost[] = [
     {
-        id: 1,
+        id: 9,
         title: '고무 오리 문제 해결법',
         thumbnailUrl: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FKWHnw%2Fbtsp7UgmAR2%2FH0LHBGuTLSSwtK60TsrgV0%2Fimg.jpg',
         description:
@@ -11,7 +11,7 @@ const POST_DATA: IPost[] = [
         category: '끄적끄적'
     },
     {
-        id: 2,
+        id: 7,
         title: '[Next.js] Next.js를 사용하는 이유?',
         thumbnailUrl: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdjQiF3%2Fbtspnjn4OoJ%2FsUY9hl6PTYRQ50vl7GQ3Ak%2Fimg.png',
         description:
@@ -19,7 +19,7 @@ const POST_DATA: IPost[] = [
         category: 'Next.js'
     },
     {
-        id: 3,
+        id: 6,
         title: '[Next.js 13.4] - Next-auth를 사용해 소셜 로그인 구현하기',
         thumbnailUrl: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcWuHAk%2FbtsplMDLkrm%2FUslgWtWjjyyypSiWkFw6o0%2Fimg.webp',
         description:
@@ -27,7 +27,7 @@ const POST_DATA: IPost[] = [
         category: 'Next.js'
     },
     {
-        id: 4,
+        id: 5,
         title: 'React Dev 공식문서 읽기(컴포넌트에 Props 전달하기)',
         thumbnailUrl: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FwKrtn%2FbtslauN10M5%2FgKkEgk5VCkQHr5tLwKt4Ak%2Fimg.webp',
         description:
@@ -35,7 +35,7 @@ const POST_DATA: IPost[] = [
         category: '끄적끄적'
     },
     {
-        id: 5,
+        id: 4,
         title: '[모던 자바스크립트 Deep Dive] 변수',
         thumbnailUrl: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc7lMgw%2Fbtr1Uus0vNS%2F37H0DNm123hJGXAYFZwBs0%2Fimg.png',
         description:
@@ -43,7 +43,7 @@ const POST_DATA: IPost[] = [
         category: 'JavaScript'
     },
     {
-        id: 6,
+        id: 3,
         title: '[Next.js] Data Fetching 방법',
         thumbnailUrl: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fvkd0Z%2FbtrSMIk8oHH%2FoUkKfbDK6M7u0GnKKe2AqK%2Fimg.png',
         description:
@@ -51,7 +51,7 @@ const POST_DATA: IPost[] = [
         category: 'Next.js'
     },
     {
-        id: 7,
+        id: 2,
         title: '[모던 자바스크립트 Deep Dive] - 프로미스(Promise)',
         thumbnailUrl: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FG1myi%2FbtrStQeeP6i%2FoqRCeGs7X5IOGjqKymU1M1%2Fimg.png',
         description:
@@ -59,7 +59,7 @@ const POST_DATA: IPost[] = [
         category: 'JavaScript'
     },
     {
-        id: 8,
+        id: 1,
         title: '[모던 자바스크립트 Deep Dive] - 비동기 프로그래밍',
         thumbnailUrl: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F1FzVi%2FbtrStQKiSXe%2F1oJSKnuOQ8N1z23Outm8e1%2Fimg.jpg',
         description:
@@ -72,7 +72,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<IPost[
     if (req.method === 'GET') {
         const { query } = req;
         const filterData = POST_DATA.filter((post) => post.category === query.category);
-        console.log(filterData);
         res.status(200).json(query.category === 'ALL' ? POST_DATA : filterData);
     }
 }

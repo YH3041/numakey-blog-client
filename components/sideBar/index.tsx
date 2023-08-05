@@ -30,6 +30,7 @@ const SideBar: React.FC<ISideBar> = ({ categories, currentCategory, setCurrentCa
             <CategoriesWrap>
                 {categories.map((category) => (
                     <button
+                        key={category}
                         css={
                             currentCategory === category
                                 ? css`
