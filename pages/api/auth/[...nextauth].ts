@@ -4,9 +4,10 @@ import NaverProvider from 'next-auth/providers/naver';
 import KakaoProvider from 'next-auth/providers/kakao';
 
 const authOptions = {
+    secret: process.env.NEXT_AUTH_SECRET,
     providers: [
         GoogleProvider({
-            clientId: process.env.KAKAO_CLIENT_ID!,
+            clientId: process.env.GOOGLE_CLIENT_ID!,
             clientSecret: process.env.GOOGLE_SECRET!
         }),
         NaverProvider({
